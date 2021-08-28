@@ -1,3 +1,4 @@
+//Importando librerias y iconos
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,9 +7,12 @@ import {
   faSquare,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-const Tarea = ({ tarea, toggleCompletada, editarTarea,borrarTarea }) => {
+// funcion para manipular las tareas editarlas, eliminarlas y marcarlas como completadas
+const Tarea = ({ tarea, toggleCompletada, editarTarea, borrarTarea }) => {
+  //estados para crear una nueva tarea y editar las tareas
   const [editandoTarea, cambiarEditandoTarea] = useState(false);
   const [nuevaTarea, CambiarNuevaTarea] = useState(tarea.texto);
+  //funcion para editar las tareas
   const handleSubmit = (e) => {
     e.preventDefault();
     editarTarea(tarea.id, nuevaTarea);
@@ -17,11 +21,13 @@ const Tarea = ({ tarea, toggleCompletada, editarTarea,borrarTarea }) => {
 
   return (
     <li className="lista-tareas__tarea">
+      {/*comprobando la tarea esta completada o no para cambiar el icono de esta */}
       <FontAwesomeIcon
         icon={tarea.completada ? faCheckSquare : faSquare}
         className="lista-tareas__icono lista-tareas__icono-check"
         onClick={() => toggleCompletada(tarea.id)}
       />
+      {/*Comprobando que se le dio click al icono de editar para mostrar o ocultar el formulario de editar */}
       <div className="lista-tareas__texto">
         {editandoTarea ? (
           <form
@@ -44,6 +50,7 @@ const Tarea = ({ tarea, toggleCompletada, editarTarea,borrarTarea }) => {
         )}
       </div>
       <div className="lista-tareas__contenedores-botones">
+        {/*icono de editar tarea */}
         <FontAwesomeIcon
           icon={faEdit}
           className="lista-tareas__icono lista-tareas__icono-accion"
@@ -51,6 +58,7 @@ const Tarea = ({ tarea, toggleCompletada, editarTarea,borrarTarea }) => {
             cambiarEditandoTarea(!editandoTarea);
           }}
         />
+        {/*icono de eliminar tarea */}
         <FontAwesomeIcon
           icon={faTimes}
           className="lista-tareas__icono lista-tareas__icono-accion"
@@ -60,5 +68,5 @@ const Tarea = ({ tarea, toggleCompletada, editarTarea,borrarTarea }) => {
     </li>
   );
 };
-
+//exportando componente Tarea
 export default Tarea;

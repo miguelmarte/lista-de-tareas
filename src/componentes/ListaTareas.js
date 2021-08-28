@@ -1,6 +1,9 @@
+//Importando librerias y componentes
 import React from "react";
 import Tarea from "./Tarea";
+//funcion para la lista de las tareas
 const ListaTareas = ({ tareas, cambiarTareas, mostrarCompletadas }) => {
+  //funcion para cambiar el estado de la tarea, si esta completada o no
   const toggleCompletada = (id) => {
     cambiarTareas(
       tareas.map((tarea) => {
@@ -12,6 +15,7 @@ const ListaTareas = ({ tareas, cambiarTareas, mostrarCompletadas }) => {
       })
     );
   };
+  //funcion para editar la tarea
   const editarTarea = (id, nuevoTexto) => {
     cambiarTareas(
       tareas.map((tarea) => {
@@ -23,6 +27,7 @@ const ListaTareas = ({ tareas, cambiarTareas, mostrarCompletadas }) => {
       })
     );
   };
+  //funcion para borrar la tarea
   const borrarTarea = (id) => {
     cambiarTareas(
       tareas.filter((tarea) => {
@@ -35,7 +40,9 @@ const ListaTareas = ({ tareas, cambiarTareas, mostrarCompletadas }) => {
     );
   };
   return (
+    //retornando la lista de tareas y comprobando si se mostrara las no completadas o las completadas
     <ul className="lista-tareas">
+      {/*comprobando que la lista no este vacia */}
       {tareas.length > 0 ? (
         tareas.map((tarea) => {
           if (mostrarCompletadas) {
@@ -62,10 +69,11 @@ const ListaTareas = ({ tareas, cambiarTareas, mostrarCompletadas }) => {
           return "";
         })
       ) : (
+        //si la lista esta vacia imprimiendo un mensaje en pantalla de que esta vacia
         <div className="lista-tareas__mensaje">No hay tareas agregadas</div>
       )}
     </ul>
   );
 };
-
+//exportando componente ListaTareas
 export default ListaTareas;
