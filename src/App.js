@@ -17,12 +17,19 @@ const App = () => {
       completada: true,
     },
   ]);
-  //console.log(tareas);
+  const [mostrarCompletadas, CambiarMostarCompletadas] = useState(false);
   return (
     <div className="contenedor">
-      <Header />
+      <Header
+        mostrarCompletadas={mostrarCompletadas}
+        CambiarMostarCompletadas={CambiarMostarCompletadas}
+      />
       <FormularioTareas tareas={tareas} cambiarTareas={cambiarTareas} />
-      <ListaTareas tareas={tareas} cambiarTareas={cambiarTareas} />
+      <ListaTareas
+        tareas={tareas}
+        cambiarTareas={cambiarTareas}
+        mostrarCompletadas={mostrarCompletadas}
+      />
     </div>
   );
 };
