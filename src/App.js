@@ -8,8 +8,13 @@ const App = () => {
   const [tareas, cambiarTareas] = useState([
     {
       id: 1,
-      texto: "lavar la ropa",
+      texto: "Editar Video",
       completada: false,
+    },
+    {
+      id: 2,
+      texto: "Ver peliculas",
+      completada: true,
     },
   ]);
   //console.log(tareas);
@@ -17,7 +22,7 @@ const App = () => {
     <div className="contenedor">
       <Header />
       <FormularioTareas tareas={tareas} cambiarTareas={cambiarTareas} />
-      <ListaTareas tareas={tareas} />
+      <ListaTareas tareas={tareas} cambiarTareas={cambiarTareas} />
     </div>
   );
 };

@@ -15,7 +15,7 @@
   grid-template-rows: auto auto 1fr;
 }
 
-/*----- Header --------*/
+/* * --- --- ---  HEADER --- --- --- */
 .header {
   display: flex;
   align-items: center;
@@ -49,6 +49,7 @@
   font-size: 14px;
   margin-left: 10px;
 }
+
 /* * --- --- ---  FORMULARIO AGREGAR --- --- --- */
 .formulario-tareas {
   display: flex;
@@ -90,82 +91,82 @@
 /* * --- --- ---  LISTA TAREAS --- --- --- */
 
 .lista-tareas {
-	list-style: none;
-	height: 100%;
-	overflow: auto;
+  list-style: none;
+  height: 100%;
+  overflow: auto;
 }
 
 .lista-tareas__tarea {
-	height: 60px;
-	padding: 0 20px;
-	align-items: center;
-	color: #4B4B4B;
-	font-size: 18px;
-	display: grid;
-	grid-template-columns: auto 1fr auto;
+  height: 60px;
+  padding: 0 20px;
+  align-items: center;
+  color: #4b4b4b;
+  font-size: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
 }
 
 .lista-tareas__texto {
-	text-align: left;
-	width: 100%;
+  text-align: left;
+  width: 100%;
 }
 
 .lista-tareas__tarea:hover .lista-tareas__icono-accion {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 .lista-tareas__tarea:nth-child(even) {
-	background: #F3F3F3;
+  background: #f3f3f3;
 }
 
 .lista-tareas__contenedor-botones {
-	display: flex;
+  display: flex;
 }
 
 .lista-tareas__icono {
-	cursor: pointer;
-	font-size: 16px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .lista-tareas__icono-check {
-	margin-right: 20px;
-	font-size: 26px;
+  margin-right: 20px;
+  font-size: 26px;
 }
 
 .lista-tareas__icono-accion {
-	margin-left: 20px;
-	opacity: 0;
-	transition: .3s ease all;
+  margin-left: 20px;
+  opacity: 0;
+  transition: 0.3s ease all;
 }
 
 .lista-tareas__mensaje {
-	text-align: center;
-	color: #b8b8b8;
-	font-size: 20px;
-	padding: 40px 20px;
+  text-align: center;
+  color: #b8b8b8;
+  font-size: 20px;
+  padding: 40px 20px;
 }
 
 /* * --- --- ---  FORMULARIO EDITAR TAREA --- --- --- */
 .formulario-editar-tarea {
-	display: flex;
+  display: flex;
 }
 
 .formulario-editar-tarea__input {
-	width: 100%;
-	border: none;
-	border-bottom: 2px solid #b8b8b8;
-	background: none;
-	font-size: 20px;
-	font-family: 'Roboto', sans-serif;
-	margin-right: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #b8b8b8;
+  background: none;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  margin-right: 20px;
 }
 
 .formulario-editar-tarea__btn {
-	border: none;
-	background: var(--verde);
-	cursor: pointer;
-	color: #fff;
-	padding: 0 10px;
-	font-family: 'Roboto', sans-serif;
-	border-radius: 3px;
+  border: none;
+  background: var(--verde);
+  cursor: pointer;
+  color: #fff;
+  padding: 0 10px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 3px;
 }
